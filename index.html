@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090b">
+<title>rayy — Social Portfolio</title>
+<style>
+:root{
+ --bg:#070809;--card:#0e1013;--card2:#14161a;--line:#22252b;--text:#f4f5f7;
+ --muted:#8c919b;--accent:#8b6cff;--accent2:#00c8ee;--green:#39d995;--max:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.5}
+a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}
+.container{width:min(var(--max),94%);margin:auto}
+
+/* top */
+.topbar{height:66px;position:sticky;top:0;z-index:100;background:rgba(7,8,10,.82);backdrop-filter:blur(20px);border-bottom:1px solid #17191d}
+.topin{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:.12em;font-size:14px}
+.search{width:250px;background:#111318;border:1px solid #252830;border-radius:12px;padding:9px 13px;color:#fff;outline:0}
+.search::placeholder{color:#666b75}
+.nav{display:flex;gap:18px;color:#858a94;font-size:12px}
+.nav a:hover{color:#fff}
+
+/* profile */
+.profile-page{padding:20px 0 70px}
+.cover{height:280px;border:1px solid var(--line);border-radius:22px 22px 0 0;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 78% 22%,rgba(124,92,255,.42),transparent 27%),
+ radial-gradient(circle at 20% 80%,rgba(0,212,255,.16),transparent 28%),
+ linear-gradient(125deg,#11131a,#08090c 55%,#15111e)}
+.cover:before{content:"";position:absolute;inset:-30%;background:repeating-linear-gradient(118deg,transparent 0 38px,#ffffff09 39px 40px);transform:rotate(-7deg)}
+.cover:after{content:"RAYY";position:absolute;right:-20px;bottom:-62px;font-size:190px;font-weight:1000;letter-spacing:-.1em;color:#ffffff05}
+.cover-content{position:absolute;inset:0;padding:28px;display:flex;justify-content:space-between;align-items:flex-start}
+.cover-pill{font-size:11px;color:#c7cbd4;border:1px solid #383b44;background:#0b0d12aa;padding:7px 11px;border-radius:999px}
+.cover-meta{font-size:11px;color:#858a94;text-align:right}
+.profile-card{position:relative;background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;padding:0 28px 22px}
+.avatar{width:124px;height:124px;border-radius:50%;border:6px solid var(--card);background:linear-gradient(145deg,#252934,#0d0f13);position:relative;margin-top:-69px;display:grid;place-items:center;font-size:46px;font-weight:900;overflow:hidden;z-index:2}
+.avatar img{width:100%;height:100%;object-fit:cover;display:none}
+.avatar .online{position:absolute;right:7px;bottom:9px;width:20px;height:20px;background:var(--green);border:4px solid var(--card);border-radius:50%}
+.profile-info{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-top:-3px}
+.name h1{font-size:29px;letter-spacing:-.04em}.name p{color:#858a94;font-size:13px;margin-top:2px}
+.badge{display:inline-block;margin-left:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);font-size:10px;text-align:center;line-height:16px}
+.bio{color:#a0a4ad;max-width:650px;font-size:13px;margin-top:14px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.link{border:1px solid #2a2d34;background:#15171b;color:#aeb2ba;border-radius:9px;padding:7px 10px;font-size:11px}
+.follow{background:#f4f4f5;color:#090a0c;border:0;border-radius:10px;padding:11px 17px;font-weight:700;font-size:12px;cursor:pointer}
+
+/* tabs */
+.tabs{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-top:16px;padding:0 4px}
+.tab{padding:15px 3px;color:#777c86;font-size:12px;cursor:pointer;border-bottom:2px solid transparent}
+.tab.active{color:#fff;border-color:var(--accent)}
+
+/* layout */
+.content{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:14px;margin-top:16px}
+.main,.side-card{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.post{padding:18px;border-bottom:1px solid var(--line)}
+.post:last-child{border-bottom:0}
+.post-head{display:flex;align-items:center;gap:10px}
+.mini-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,#252934,#0d0f13);display:grid;place-items:center;font-weight:800;font-size:13px;overflow:hidden}
+.mini-avatar img{width:100%;height:100%;object-fit:cover}
+.post-user{font-size:12px;font-weight:700}.post-time{display:block;color:#686d77;font-size:10px}
+.more{margin-left:auto;color:#666b74}
+.post p{color:#b5b8c0;font-size:13px;margin:14px 0}
+.post-banner{height:300px;border-radius:13px;overflow:hidden;border:1px solid #272a31;position:relative;background:
+ radial-gradient(circle at 70% 25%,rgba(124,92,255,.5),transparent 25%),
+ linear-gradient(135deg,#151821,#08090b)}
+.post-banner .big{font-size:76px;letter-spacing:-.08em;font-weight:950;position:absolute;left:28px;bottom:20px}
+.post-banner .small{position:absolute;right:24px;top:24px;color:#9da2ad;font-size:10px;letter-spacing:.18em}
+.post-banner.alt{background:linear-gradient(120deg,#151617,#22242a)}.post-banner.alt .big{font-size:55px}
+.post-actions{display:flex;gap:20px;color:#777c86;font-size:11px;padding-top:14px}
+.post-actions span{cursor:pointer}.post-actions span:hover{color:#fff}
+
+/* side */
+.side{display:grid;gap:16px;height:max-content}
+.side-card{padding:16px}.side-card h3{font-size:13px;margin-bottom:15px}
+.about-text{color:#858a94;font-size:12px}
+.info{display:grid;gap:11px;margin-top:15px}.info div{font-size:11px;color:#777c86}.info b{display:block;color:#c4c7ce;font-weight:500;margin-bottom:1px}
+.project-mini{display:grid;grid-template-columns:55px 1fr;gap:10px;align-items:center;margin-top:11px}
+.project-mini-img{width:55px;height:55px;border-radius:9px;background:linear-gradient(135deg,#20232c,#0a0b0e);display:grid;place-items:center;font-weight:800;font-size:12px}
+.project-mini strong{font-size:11px}.project-mini small{color:#6f747e;font-size:10px}
+.skill-row{display:flex;flex-wrap:wrap;gap:6px}.skill{font-size:10px;color:#a8acb5;border:1px solid #292c33;background:#14161a;border-radius:7px;padding:6px 8px}
+
+/* contact */
+.contact{margin-top:14px;background:linear-gradient(135deg,#11131a,#0b0c10);border:1px solid var(--line);border-radius:16px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.contact h2{font-size:22px;letter-spacing:-.03em}.contact p{color:#777c86;font-size:12px;margin-top:4px}
+.contact-btn{background:var(--accent);border:0;color:#fff;padding:11px 15px;border-radius:10px;font-size:12px;font-weight:700;white-space:nowrap}
+
+footer{padding:35px 0;color:#5f646d;font-size:10px;text-align:center}
+
+/* editor modal */
+.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px;z-index:200}
+.modal-box{width:min(480px,100%);background:#111318;border:1px solid #292c33;border-radius:18px;padding:22px}
+.modal-top{display:flex;justify-content:space-between;margin-bottom:18px}.close{background:none;border:0;color:#777;font-size:20px;cursor:pointer}
+.field{margin-bottom:13px}.field label{display:block;color:#777c86;font-size:10px;margin-bottom:6px}
+.field input,.field textarea{width:100%;background:#0b0d10;border:1px solid #292c33;border-radius:9px;padding:10px;color:#fff;outline:0}.field textarea{height:90px}
+.toast{position:fixed;right:18px;bottom:18px;background:#f4f4f5;color:#090a0c;padding:10px 14px;border-radius:10px;font-size:11px;opacity:0;transform:translateY(8px);transition:.2s;z-index:300}.toast.show{opacity:1;transform:none}
+@media(max-width:850px){.content{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.search{display:none}}
+@media(max-width:600px){.cover{height:240px}.profile-card{padding:0 18px 22px}.profile-info{display:block}.profile-info .follow{margin-top:15px}.side{grid-template-columns:1fr}.post-banner{height:230px}.post-banner .big{font-size:50px}.profile-page{padding-top:12px}.nav{height:60px}.nav .nav{display:none}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+ <div class="container topin">
+  <a class="brand" href="#">RAYY.</a>
+  <input class="search" placeholder="Search portfolio..." onkeydown="if(event.key==='Enter')toast('Search demo')">
+  <nav class="nav"><a href="#posts">Posts</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+ </div>
+</header>
+
+<main class="profile-page">
+<div class="container">
+
+<!-- BANNER + PROFILE -->
+<section>
+ <div class="cover">
+  <div class="cover-content">
+   <span class="cover-pill">CREATIVE / DEVELOPER</span>
+   <span class="cover-meta">EST. 2023<br>INDONESIA</span>
+  </div>
+ </div>
+ <div class="profile-card">
+  <div class="avatar" id="avatar"><span id="initial">R</span><img id="avatarImg"><span class="online"></span></div>
+  <div class="profile-info">
+   <div class="name">
+    <h1>rayy <span class="badge">✓</span></h1>
+    <p>@rayy · Designer & Developer</p>
+    <p class="bio">Membangun website, interface, dan visual digital yang clean, dark, dan punya karakter. Saya suka membuat sesuatu yang sederhana terasa berkelas.</p>
+    <div class="links"><a class="link" href="#work">✦ Portfolio</a><a class="link" href="#" onclick="toast('Ganti link GitHub kamu')">GitHub ↗</a><a class="link" href="#" onclick="toast('Ganti link Instagram kamu')">Instagram ↗</a><a class="link" href="#" onclick="openPhoto()">Ganti foto</a></div>
+    <input id="photoInput" type="file" accept="image/*" style="display:none">
+   </div>
+   <button class="follow" onclick="openContact()">Let's work together</button>
+  </div>
+  <div class="tabs"><a class="tab active" href="#posts">Posts</a><a class="tab" href="#projects">Projects</a><a class="tab" href="#about">About</a></div>
+ </div>
+</section>
+
+<div class="content" id="posts">
+ <section class="main">
+
+  <article class="post">
+   <div class="post-head"><div class="mini-avatar">R</div><div><div class="post-user">rayy ✓</div><span class="post-time">2 days ago · Public</span></div><span class="more">•••</span></div>
+   <p>Building in the dark. A portfolio concept designed to feel more like a social profile than a traditional resume.</p>
+   <div class="post-banner">
+    <span class="small">SELECTED WORK / 01</span>
+    <span class="big">DARK<br>BY DESIGN.</span>
+   </div>
+   <div class="post-actions"><span onclick="toast('Liked ♥')">♡ Like</span><span onclick="toast('Komentar demo')">○ Comment</span><span onclick="share()">↗ Share</span></div>
+  </article>
+
+  <article class="post" id="projects">
+   <div class="post-head"><div class="mini-avatar">R</div><div><div class="post-user">rayy ✓</div><span class="post-time">1 week ago · Project</span></div><span class="more">•••</span></div>
+   <p><b>Nova Digital.</b> Landing page dengan visual editorial, typography besar, dan fokus pada conversion.</p>
+   <div class="post-banner alt">
+    <span class="small">NOVA / DIGITAL PRODUCT</span>
+    <span class="big">NOVA.</span>
+   </div>
+   <div class="post-actions"><span>♡ 24</span><span>○ 8 comments</span><span>↗ View project</span></div>
+  </article>
+
+  <article class="post" id="about">
+   <div class="post-head"><div class="mini-avatar">R</div><div><div class="post-user">rayy ✓</div><span class="post-time">About me</span></div></div>
+   <p>Saya tertarik dengan <b>web design, frontend, branding, dan digital products.</b> Saat tidak sedang coding, saya biasanya mengeksplorasi visual baru dan mencoba membuat project kecil.</p>
+   <div class="post-actions"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span><span>Figma</span></div>
+  </article>
+
+ </section>
+
+ <aside class="side">
+  <div class="side-card">
+   <h3>ABOUT</h3>
+   <p class="about-text">Designer & developer yang senang membuat interface modern dengan perhatian pada detail.</p>
+   <div class="info">
+    <div><b>Based in</b>Indonesia</div>
+    <div><b>Focus</b>Web · UI · Branding</div>
+    <div><b>Status</b>Available for projects</div>
+   </div>
+  </div>
+
+  <div class="side-card">
+   <h3>FEATURED PROJECTS</h3>
+   <div class="project-mini"><div class="project-mini-img">NOVA</div><div><strong>Nova Digital</strong><small>Web Design</small></div></div>
+   <div class="project-mini"><div class="project-mini-img">MONO</div><div><strong>Mono Studio</strong><small>Brand Identity</small></div></div>
+   <div class="project-mini"><div class="project-mini-img">FLOW</div><div><strong>Flow App</strong><small>UI / Frontend</small></div></div>
+  </div>
+
+  <div class="side-card">
+   <h3>SKILLS</h3>
+   <div class="skill-row"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">UI Design</span><span class="skill">Figma</span><span class="skill">Branding</span></div>
+  </div>
+ </aside>
+</div>
+
+<section class="contact" id="contact">
+ <div><h2>Got an idea?</h2><p>Let's turn it into something people remember.</p></div>
+ <button class="contact-btn" onclick="openContact()">Start a conversation →</button>
+</section>
+
+</div>
+</main>
+
+<footer>© 2026 rayy · Built with HTML, CSS & JavaScript</footer>
+
+<div class="modal" id="modal">
+ <div class="modal-box">
+  <div class="modal-top"><h3>Start a conversation</h3><button class="close" onclick="closeContact()">×</button></div>
+  <form onsubmit="sendMail(event)">
+   <div class="field"><label>NAME</label><input id="mName" required placeholder="Nama kamu"></div>
+   <div class="field"><label>EMAIL</label><input id="mEmail" type="email" required placeholder="email@example.com"></div>
+   <div class="field"><label>MESSAGE</label><textarea id="mMsg" required placeholder="Ceritakan project kamu..."></textarea></div>
+   <button class="contact-btn" style="width:100%" type="submit">Send message ↗</button>
+  </form>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const t=document.getElementById('toast');
+function toast(x){t.textContent=x;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),1700)}
+function share(){if(navigator.share)navigator.share({title:'rayy Portfolio',url:location.href});else{navigator.clipboard?.writeText(location.href);toast('Link disalin')}}
+function openContact(){document.getElementById('modal').style.display='flex'}
+function closeContact(){document.getElementById('modal').style.display='none'}
+function sendMail(e){
+ e.preventDefault();
+ const n=document.getElementById('mName').value,em=document.getElementById('mEmail').value,m=document.getElementById('mMsg').value;
+ location.href='mailto:hello@example.com?subject='+encodeURIComponent('Portfolio inquiry dari '+n)+'&body='+encodeURIComponent('Email: '+em+'\n\n'+m)
+}
+function openPhoto(){document.getElementById('photoInput').click()}
+document.getElementById('photoInput').addEventListener('change',e=>{
+ const f=e.target.files[0];if(!f)return;const r=new FileReader();
+ r.onload=x=>{document.getElementById('avatarImg').src=x.target.result;document.getElementById('avatarImg').style.display='block';document.getElementById('initial').style.display='none';localStorage.setItem('rayenPhoto',x.target.result);toast('Foto profil diperbarui')}
+ r.readAsDataURL(f)
+});
+const saved=localStorage.getItem('rayenPhoto');
+if(saved){document.getElementById('avatarImg').src=saved;document.getElementById('avatarImg').style.display='block';document.getElementById('initial').style.display='none'}
+document.querySelectorAll('.tab').forEach(a=>a.addEventListener('click',()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));a.classList.add('active')
+}));
+</script>
+</body>
+</html>
