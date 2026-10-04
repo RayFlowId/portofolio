@@ -323,7 +323,7 @@ ${message}`;
 
 
       const mailto =
-        `mailto:${MY_EMAIL}` +
+        `mailto:rayhosting12@gmail.com` +
         `?subject=${encodeURIComponent(subject)}` +
         `&body=${encodeURIComponent(body)}`;
 
