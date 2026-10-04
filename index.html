@@ -1,2244 +1,125 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<title>Rayy — Creator & Developer</title>
+  <meta
+    name="description"
+    content="Portfolio pribadi Rayy — Web Developer, Creator, dan digital enthusiast."
+  >
 
-<meta
-  name="description"
-  content="Personal portfolio Rayy — Creator, Developer, dan digital enthusiast."
->
+  <meta name="theme-color" content="#07080c">
 
-<meta name="theme-color" content="#07080b">
+  <title>Rayy — Portfolio</title>
 
-<style>
-
-:root{
-  --bg:#07080b;
-  --surface:#0d0f13;
-  --surface2:#11141a;
-  --border:#20242c;
-  --border-soft:#171a20;
-  --text:#f5f7fa;
-  --muted:#8b919c;
-  --muted2:#656b76;
-  --accent:#8b6cff;
-  --accent2:#6d55e8;
-  --green:#39d995;
-  --white:#fff;
-  --max:1120px;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
-}
-
-body{
-  background:
-    radial-gradient(
-      circle at 15% 5%,
-      rgba(139,108,255,.10),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 25%,
-      rgba(57,217,149,.045),
-      transparent 24%
-    ),
-    var(--bg);
-
-  color:var(--text);
-
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-
-  background-image:
-    linear-gradient(
-      rgba(255,255,255,.018) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.018) 1px,
-      transparent 1px
-    );
-
-  background-size:55px 55px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 75%
-    );
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font:inherit;
-  cursor:pointer;
-}
-
-
-/* ================= HEADER ================= */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-
-  height:70px;
-
-  background:rgba(7,8,11,.76);
-  backdrop-filter:blur(18px);
-
-  border-bottom:
-    1px solid rgba(255,255,255,.055);
-}
-
-.navbar{
-  height:100%;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.container{
-  width:min(var(--max),92%);
-  margin:auto;
-}
-
-.logo{
-  font-size:15px;
-  font-weight:900;
-  letter-spacing:.18em;
-}
-
-.logo span{
-  color:var(--accent);
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-.nav a{
-  color:var(--muted);
-  font-size:12px;
-  transition:.2s;
-}
-
-.nav a:hover{
-  color:white;
-}
-
-.nav-contact{
-  border:1px solid var(--border);
-  padding:8px 12px;
-  border-radius:9px;
-  color:#ddd!important;
-  background:rgba(255,255,255,.025);
-}
-
-.menu{
-  display:none;
-
-  width:40px;
-  height:40px;
-
-  border:1px solid var(--border);
-  border-radius:10px;
-
-  background:var(--surface);
-  color:white;
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:calc(100vh - 70px);
-
-  display:grid;
-  grid-template-columns:1.35fr .65fr;
-
-  align-items:center;
-
-  gap:60px;
-
-  padding:90px 0 80px;
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-
-  color:#aaaeba;
-
-  font-size:11px;
-
-  border:1px solid var(--border);
-
-  background:rgba(255,255,255,.025);
-
-  padding:7px 10px;
-
-  border-radius:999px;
-
-  margin-bottom:22px;
-}
-
-.dot{
-  width:7px;
-  height:7px;
-
-  border-radius:50%;
-
-  background:var(--green);
-
-  box-shadow:
-    0 0 12px rgba(57,217,149,.7);
-}
-
-.hero h1{
-  max-width:760px;
-
-  font-size:
-    clamp(
-      42px,
-      7vw,
-      76px
-    );
-
-  line-height:.98;
-
-  letter-spacing:-.065em;
-
-  font-weight:900;
-}
-
-.gradient{
-  background:
-    linear-gradient(
-      110deg,
-      #fff 10%,
-      #b9afff 55%,
-      #806cff
-    );
-
-  -webkit-background-clip:text;
-  background-clip:text;
-
-  color:transparent;
-}
-
-.hero-desc{
-  max-width:650px;
-
-  margin-top:24px;
-
-  color:var(--muted);
-
-  font-size:15px;
-
-  line-height:1.8;
-}
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  margin-top:30px;
-}
-
-.btn{
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  gap:8px;
-
-  border-radius:10px;
-
-  padding:11px 16px;
-
-  border:1px solid var(--border);
-
-  background:var(--surface);
-
-  color:#dfe2e8;
-
-  font-size:12px;
-
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-
-  border-color:#343945;
-}
-
-.btn-primary{
-  color:#08090c;
-
-  background:#f4f5f7;
-
-  border-color:#f4f5f7;
-
-  font-weight:800;
-}
-
-.btn-primary:hover{
-  background:white;
-}
-
-
-/* ================= PROFILE ================= */
-
-.profile-wrap{
-  position:relative;
-}
-
-.profile-card{
-  position:relative;
-
-  padding:26px;
-
-  border:1px solid var(--border);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.045),
-      rgba(255,255,255,.012)
-    ),
-    var(--surface);
-
-  border-radius:24px;
-
-  overflow:hidden;
-}
-
-.profile-card::before{
-  content:"";
-
-  position:absolute;
-
-  width:190px;
-  height:190px;
-
-  border-radius:50%;
-
-  background:
-    rgba(139,108,255,.16);
-
-  filter:blur(55px);
-
-  top:-100px;
-  right:-80px;
-}
-
-.avatar{
-  width:112px;
-  height:112px;
-
-  border-radius:28px;
-
-  overflow:hidden;
-
-  background:
-    linear-gradient(
-      145deg,
-      #202532,
-      #0b0d11
-    );
-
-  border:1px solid #303541;
-
-  position:relative;
-}
-
-.avatar img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  display:block;
-}
-
-.profile-name{
-  margin-top:20px;
-}
-
-.profile-name h2{
-  font-size:24px;
-
-  letter-spacing:-.04em;
-}
-
-.verified{
-  display:inline-grid;
-
-  place-items:center;
-
-  width:18px;
-  height:18px;
-
-  border-radius:50%;
-
-  background:var(--accent);
-
-  color:white;
-
-  font-size:10px;
-
-  vertical-align:3px;
-}
-
-.profile-role{
-  color:var(--muted);
-
-  font-size:12px;
-
-  margin-top:3px;
-}
-
-.profile-bio{
-  color:#8f96a1;
-
-  font-size:12px;
-
-  margin-top:16px;
-
-  line-height:1.7;
-}
-
-.profile-meta{
-  display:grid;
-
-  gap:9px;
-
-  margin-top:22px;
-}
-
-.meta{
-  display:flex;
-
-  justify-content:space-between;
-  align-items:center;
-
-  padding:10px 11px;
-
-  border:1px solid var(--border-soft);
-
-  background:#0a0c10;
-
-  border-radius:9px;
-
-  font-size:10px;
-}
-
-.meta span{
-  color:var(--muted2);
-}
-
-.meta b{
-  font-weight:600;
-
-  color:#c9cdd5;
-}
-
-.available{
-  color:var(--green)!important;
-}
-
-
-/* ================= SECTIONS ================= */
-
-section{
-  padding:90px 0;
-}
-
-.section-head{
-  display:flex;
-
-  align-items:end;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-  margin-bottom:24px;
-}
-
-.section-kicker{
-  color:var(--accent);
-
-  font-size:10px;
-
-  font-weight:800;
-
-  letter-spacing:.18em;
-
-  text-transform:uppercase;
-}
-
-.section-title{
-  font-size:30px;
-
-  letter-spacing:-.045em;
-
-  margin-top:5px;
-}
-
-.section-description{
-  color:var(--muted);
-
-  font-size:12px;
-
-  max-width:420px;
-}
-
-.card{
-  border:1px solid var(--border);
-
-  background:
-    rgba(13,15,19,.78);
-
-  border-radius:18px;
-
-  padding:23px;
-}
-
-.card h3{
-  font-size:15px;
-
-  margin-bottom:11px;
-}
-
-.card p{
-  color:var(--muted);
-
-  font-size:12px;
-
-  line-height:1.8;
-}
-
-
-/* ================= ABOUT ================= */
-
-.about-grid{
-  display:grid;
-
-  grid-template-columns:
-    1.25fr .75fr;
-
-  gap:14px;
-}
-
-.about-big{
-  min-height:270px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:space-between;
-}
-
-.about-big p{
-  max-width:650px;
-
-  font-size:14px;
-}
-
-.signature{
-  color:#747b87;
-
-  font-size:11px;
-}
-
-.info-grid{
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:10px;
-}
-
-.info-box{
-  padding:15px;
-
-  border:1px solid var(--border-soft);
-
-  background:#0a0c10;
-
-  border-radius:12px;
-}
-
-.info-box strong{
-  display:block;
-
-  font-size:12px;
-}
-
-.info-box span{
-  color:var(--muted2);
-
-  font-size:10px;
-}
-
-
-/* ================= SKILLS ================= */
-
-.skills-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:10px;
-}
-
-.skill-card{
-  padding:18px;
-
-  border:1px solid var(--border);
-
-  border-radius:15px;
-
-  background:var(--surface);
-
-  transition:.2s;
-}
-
-.skill-card:hover{
-  transform:translateY(-3px);
-
-  border-color:#363b47;
-}
-
-.skill-icon{
-  width:36px;
-  height:36px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:10px;
-
-  background:#171a21;
-
-  border:1px solid #252934;
-
-  color:#b9afff;
-
-  font-size:13px;
-
-  font-weight:900;
-}
-
-.skill-card h3{
-  font-size:12px;
-
-  margin-top:13px;
-}
-
-.skill-card p{
-  color:var(--muted2);
-
-  font-size:10px;
-
-  margin-top:3px;
-}
-
-
-/* ================= PROJECT ================= */
-
-.projects-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:14px;
-}
-
-.project-card{
-  overflow:hidden;
-
-  border:1px solid var(--border);
-
-  background:var(--surface);
-
-  border-radius:18px;
-
-  transition:.25s ease;
-}
-
-.project-card:hover{
-  transform:translateY(-5px);
-
-  border-color:#3b4050;
-
-  box-shadow:
-    0 18px 50px rgba(0,0,0,.22);
-}
-
-.project-preview{
-  height:190px;
-
-  display:grid;
-
-  place-items:center;
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(139,108,255,.25),
-      transparent 45%
-    ),
-    linear-gradient(
-      135deg,
-      #151821,
-      #090b0f
-    );
-
-  border-bottom:1px solid var(--border);
-}
-
-.project-preview::before{
-  content:"";
-
-  position:absolute;
-
-  width:180px;
-  height:180px;
-
-  border-radius:50%;
-
-  background:
-    rgba(139,108,255,.12);
-
-  filter:blur(45px);
-}
-
-.preview-content{
-  position:relative;
-
-  text-align:center;
-}
-
-.preview-logo{
-  display:block;
-
-  font-size:30px;
-
-  font-weight:900;
-
-  letter-spacing:-.06em;
-
-  color:#f4f5f7;
-}
-
-.preview-logo::after{
-  content:"";
-
-  display:inline-block;
-
-  width:7px;
-  height:7px;
-
-  margin-left:5px;
-
-  border-radius:50%;
-
-  background:var(--accent);
-
-  box-shadow:
-    0 0 14px rgba(139,108,255,.8);
-}
-
-.preview-content small{
-  display:block;
-
-  margin-top:5px;
-
-  color:#777e8a;
-
-  font-size:8px;
-
-  letter-spacing:.2em;
-}
-
-.project-content{
-  padding:20px;
-}
-
-.project-top{
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  color:var(--muted2);
-
-  font-size:9px;
-}
-
-.project-type{
-  color:var(--accent);
-
-  font-weight:800;
-
-  letter-spacing:.08em;
-}
-
-.project-card h3{
-  font-size:20px;
-
-  letter-spacing:-.035em;
-
-  margin-top:12px;
-}
-
-.project-card p{
-  color:var(--muted);
-
-  font-size:11px;
-
-  line-height:1.75;
-
-  margin-top:7px;
-}
-
-.project-tech{
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:6px;
-
-  margin-top:15px;
-}
-
-.project-tech span{
-  padding:5px 8px;
-
-  border:1px solid var(--border);
-
-  border-radius:6px;
-
-  color:#858b96;
-
-  background:#0b0d11;
-
-  font-size:9px;
-}
-
-.project-links{
-  display:flex;
-
-  gap:8px;
-
-  margin-top:18px;
-}
-
-.project-links a{
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:8px 11px;
-
-  border-radius:8px;
-
-  border:1px solid var(--border);
-
-  background:#0b0d11;
-
-  color:#d8dbe1;
-
-  font-size:10px;
-
-  transition:.2s;
-}
-
-.project-links a:hover{
-  background:#171a21;
-
-  border-color:#414754;
-
-  transform:translateY(-1px);
-}
-
-
-/* ================= JOURNEY ================= */
-
-.journey{
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:14px;
-}
-
-.timeline{
-  position:relative;
-
-  display:grid;
-
-  gap:25px;
-}
-
-.timeline::before{
-  content:"";
-
-  position:absolute;
-
-  left:5px;
-
-  top:7px;
-  bottom:7px;
-
-  width:1px;
-
-  background:#292d36;
-}
-
-.timeline-item{
-  position:relative;
-
-  padding-left:27px;
-}
-
-.timeline-item::before{
-  content:"";
-
-  position:absolute;
-
-  left:1px;
-
-  top:5px;
-
-  width:9px;
-  height:9px;
-
-  border-radius:50%;
-
-  background:var(--accent);
-
-  box-shadow:
-    0 0 0 5px
-    rgba(139,108,255,.09);
-}
-
-.timeline-item span{
-  color:var(--accent);
-
-  font-size:9px;
-
-  font-weight:800;
-
-  letter-spacing:.08em;
-}
-
-.timeline-item h3{
-  margin-top:3px;
-
-  font-size:13px;
-}
-
-.timeline-item p{
-  color:var(--muted);
-
-  font-size:11px;
-
-  margin-top:4px;
-}
-
-
-/* ================= SOCIAL ================= */
-
-.social-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:10px;
-}
-
-.social{
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:10px;
-
-  padding:17px;
-
-  border:1px solid var(--border);
-
-  background:var(--surface);
-
-  border-radius:14px;
-
-  transition:.2s;
-}
-
-.social:hover{
-  transform:translateY(-3px);
-
-  border-color:#373c48;
-}
-
-.social-left{
-  display:flex;
-
-  align-items:center;
-
-  gap:12px;
-}
-
-.social-icon{
-  width:35px;
-  height:35px;
-
-  border-radius:10px;
-
-  display:grid;
-
-  place-items:center;
-
-  background:#171a21;
-
-  border:1px solid #252934;
-
-  font-size:11px;
-
-  font-weight:900;
-}
-
-.social strong{
-  display:block;
-
-  font-size:11px;
-}
-
-.social span{
-  display:block;
-
-  color:var(--muted2);
-
-  font-size:9px;
-}
-
-.arrow{
-  color:#676d78;
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact{
-  padding:32px;
-
-  border:1px solid #292d38;
-
-  border-radius:20px;
-
-  background:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(139,108,255,.13),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #11141a,
-      #0b0d11
-    );
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  gap:25px;
-}
-
-.contact h2{
-  font-size:28px;
-
-  letter-spacing:-.045em;
-}
-
-.contact p{
-  color:var(--muted);
-
-  font-size:12px;
-
-  margin-top:5px;
-}
-
-.contact button{
-  border:0;
-
-  background:#f4f5f7;
-
-  color:#08090c;
-
-  font-weight:800;
-
-  padding:12px 17px;
-
-  border-radius:10px;
-
-  font-size:11px;
-}
-
-
-/* ================= FOOTER ================= */
-
-footer{
-  padding:35px 0 45px;
-
-  border-top:
-    1px solid var(--border-soft);
-
-  color:#555b65;
-
-  font-size:10px;
-
-  text-align:center;
-}
-
-.footer-inner{
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:15px;
-}
-
-
-/* ================= MODAL ================= */
-
-.modal{
-  position:fixed;
-
-  inset:0;
-
-  z-index:200;
-
-  display:none;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:18px;
-
-  background:rgba(0,0,0,.72);
-
-  backdrop-filter:blur(10px);
-}
-
-.modal-box{
-  width:min(460px,100%);
-
-  background:#11141a;
-
-  border:1px solid #2a2f39;
-
-  border-radius:18px;
-
-  padding:22px;
-
-  box-shadow:
-    0 25px 80px rgba(0,0,0,.5);
-}
-
-.modal-top{
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-}
-
-.modal-top h3{
-  font-size:15px;
-}
-
-.close{
-  border:0;
-
-  background:transparent;
-
-  color:#7b818c;
-
-  font-size:22px;
-}
-
-.field{
-  margin-top:13px;
-}
-
-.field label{
-  display:block;
-
-  color:#777e89;
-
-  font-size:9px;
-
-  margin-bottom:5px;
-}
-
-.field input,
-.field textarea{
-  width:100%;
-
-  border:1px solid #292e38;
-
-  background:#090b0f;
-
-  color:white;
-
-  border-radius:9px;
-
-  padding:10px;
-
-  outline:none;
-
-  font-size:11px;
-}
-
-.field textarea{
-  min-height:100px;
-
-  resize:vertical;
-}
-
-.field input:focus,
-.field textarea:focus{
-  border-color:#5148a0;
-}
-
-.submit{
-  width:100%;
-
-  margin-top:15px;
-
-  padding:11px;
-
-  border:0;
-
-  border-radius:9px;
-
-  background:var(--accent);
-
-  color:white;
-
-  font-weight:800;
-
-  font-size:11px;
-}
-
-
-/* ================= TOAST ================= */
-
-.toast{
-  position:fixed;
-
-  left:50%;
-
-  bottom:22px;
-
-  transform:
-    translate(-50%,20px);
-
-  opacity:0;
-
-  pointer-events:none;
-
-  background:#f4f5f7;
-
-  color:#08090c;
-
-  padding:10px 14px;
-
-  border-radius:9px;
-
-  font-size:10px;
-
-  font-weight:700;
-
-  transition:.25s;
-
-  z-index:300;
-}
-
-.toast.show{
-  opacity:1;
-
-  transform:
-    translate(-50%,0);
-}
-
-
-/* ================= REVEAL ================= */
-
-.reveal{
-  opacity:0;
-
-  transform:
-    translateY(18px);
-
-  transition:
-    opacity .65s ease,
-    transform .65s ease;
-}
-
-.reveal.visible{
-  opacity:1;
-
-  transform:none;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:850px){
-
-  .hero{
-    grid-template-columns:1fr;
-
-    gap:35px;
-
-    padding-top:65px;
-  }
-
-  .profile-wrap{
-    max-width:520px;
-  }
-
-  .skills-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .about-grid,
-  .journey{
-    grid-template-columns:1fr;
-  }
-
-  .social-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-
-@media(max-width:650px){
-
-  header{
-    height:64px;
-  }
-
-  .nav{
-    display:none;
-
-    position:absolute;
-
-    top:64px;
-
-    left:4%;
-    right:4%;
-
-    padding:10px;
-
-    flex-direction:column;
-
-    align-items:stretch;
-
-    gap:2px;
-
-    background:#0d0f13;
-
-    border:1px solid var(--border);
-
-    border-radius:13px;
-  }
-
-  .nav.open{
-    display:flex;
-  }
-
-  .nav a{
-    padding:11px;
-  }
-
-  .menu{
-    display:block;
-  }
-
-  .hero{
-    min-height:auto;
-
-    padding:
-      65px 0
-      45px;
-  }
-
-  .hero h1{
-    font-size:46px;
-  }
-
-  .hero-desc{
-    font-size:13px;
-  }
-
-  section{
-    padding:65px 0;
-  }
-
-  .section-head{
-    display:block;
-  }
-
-  .section-description{
-    margin-top:8px;
-  }
-
-  .projects-grid{
-    grid-template-columns:1fr;
-  }
-
-  .project-preview{
-    height:170px;
-  }
-
-  .contact{
-    display:block;
-
-    padding:25px;
-  }
-
-  .contact button{
-    margin-top:18px;
-  }
-
-  .footer-inner{
-    display:block;
-  }
-
-  .footer-inner span+span{
-    display:block;
-
-    margin-top:5px;
-  }
-
-}
-
-
-@media(max-width:420px){
-
-  .container{
-    width:min(92%,100%);
-  }
-
-  .hero h1{
-    font-size:40px;
-  }
-
-  .skills-grid{
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .profile-card{
-    padding:21px;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+  <!-- ================= NAVBAR ================= -->
 
-<!-- ================= HEADER ================= -->
+  <header class="header" id="header">
 
-<header>
+    <div class="container nav-container">
 
-  <div class="container navbar">
-
-    <a href="#" class="logo">
-      RAY<span>Y.</span>
-    </a>
-
-    <nav class="nav" id="nav">
-
-      <a href="#about">
-        About
+      <a href="#home" class="logo">
+        rayy<span>.</span>
       </a>
 
-      <a href="#skills">
-        Skills
-      </a>
+      <nav class="nav" id="nav">
 
-      <a href="#projects">
-        Projects
-      </a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
 
-      <a href="#journey">
-        Journey
-      </a>
+        <a href="#contact" class="nav-button">
+          Let's talk
+        </a>
 
-      <a
-        href="#contact"
-        class="nav-contact"
-      >
-        Let's talk ↗
-      </a>
-
-    </nav>
-
-    <button
-      class="menu"
-      id="menu"
-      aria-label="Menu"
-    >
-      ☰
-    </button>
-
-  </div>
-
-</header>
-
-
-<main>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero container">
-
-  <div class="hero-content reveal">
-
-    <div class="eyebrow">
-
-      <span class="dot"></span>
-
-      Available for new ideas
-
-    </div>
-
-
-    <h1>
-
-      Building things
-
-      <br>
-
-      <span class="gradient">
-        with curiosity.
-      </span>
-
-    </h1>
-
-
-    <p class="hero-desc">
-
-      Hi,aku rayy,aku suka membuat hal-hal baru seperti website.
-      kamu bisa support saya melalui respon dan saran.
-
-    </p>
-
-
-    <div class="hero-actions">
-
-      <a
-        href="#about"
-        class="btn btn-primary"
-      >
-        Explore profile ↓
-      </a>
-
+      </nav>
 
       <button
-        class="btn"
-        onclick="openModal()"
+        class="menu-button"
+        id="menuButton"
+        aria-label="Buka menu"
+        aria-expanded="false"
       >
-        Let's talk ↗
-      </button>
-
-
-      <button
-        class="btn"
-        onclick="copyEmail()"
-      >
-        Copy email
+        <span></span>
+        <span></span>
       </button>
 
     </div>
 
-  </div>
+  </header>
 
 
-  <!-- PROFILE -->
+  <main>
 
-  <div class="profile-wrap reveal">
+    <!-- ================= HERO ================= -->
 
-    <div class="profile-card">
+    <section class="hero" id="home">
 
+      <div class="container hero-grid">
 
-      <!--
-        FOTO PROFIL GLOBAL
+        <div class="hero-content reveal">
 
-        Upload foto kamu ke GitHub
-        dengan nama:
+          <div class="status-pill">
 
-        profile.jpg
+            <span class="status-dot"></span>
 
-        Semua pengunjung akan melihat
-        foto yang sama.
+            Available for new ideas
 
-        Pengunjung TIDAK bisa menggantinya
-        dari website.
-      -->
+          </div>
 
-      <div class="avatar">
+          <p class="hero-small">
+            HELLO, I'M
+          </p>
 
-        <img
-          src="profile.jpg"
-          alt="Foto profil Rayy"
-          onerror="this.style.display='none';"
-        >
+          <h1>
+            Rayy<span>.</span>
+          </h1>
 
-      </div>
+          <h2>
+            I build things
+            <em>with curiosity.</em>
+          </h2>
 
+          <p class="hero-description">
 
-      <div class="profile-name">
-
-        <h2>
-
-          rayy
-
-          <span class="verified">
-            ✓
-          </span>
-
-        </h2>
-
-
-        <div class="profile-role">
-
-          Creator · Developer · Learner
-
-        </div>
-
-      </div>
-
-
-      <p class="profile-bio">
-
-        Seseorang yang senang mengubah
-        ide kecil menjadi interface dan
-        website yang clean, simple,
-        dan nyaman digunakan.
-
-      </p>
-
-
-      <div class="profile-meta">
-
-
-        <div class="meta">
-
-          <span>
-            Status
-          </span>
-
-          <b class="available">
-            ● Available
-          </b>
-
-        </div>
-
-
-        <div class="meta">
-
-          <span>
-            Based
-          </span>
-
-          <b>
-            Indonesia
-          </b>
-
-        </div>
-
-
-        <div class="meta">
-
-          <span>
-            Focus
-          </span>
-
-          <b>
-            Web & Design
-          </b>
-
-        </div>
-
-
-        <div class="meta">
-
-          <span>
-            Timezone
-          </span>
-
-          <b>
-            GMT+7
-          </b>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-  <div class="container">
-
-
-    <div class="section-head reveal">
-
-      <div>
-
-        <div class="section-kicker">
-          01 / About
-        </div>
-
-        <h2 class="section-title">
-          A little about me.
-        </h2>
-
-      </div>
-
-
-      <p class="section-description">
-
-        Tidak harus terlihat sempurna.
-        Yang penting terus berkembang
-        dan punya sesuatu untuk dibagikan.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="about-grid">
-
-
-      <div class="card about-big reveal">
-
-        <div>
-
-          <h3>
-            Hey, I'm Rayy.
-          </h3>
-
-
-          <p>
-
-            Aku sedang membangun skill
-            di dunia digital, terutama web
-            dan design.
-
-            Aku menikmati proses mencoba
-            sesuatu dari nol, melihat hasilnya,
-            menemukan kesalahan, lalu
-            memperbaikinya lagi.
+            Aku suka membuat website, mengeksplorasi
+            teknologi, dan mengubah ide sederhana
+            menjadi sesuatu yang bisa digunakan.
 
           </p>
 
-
-          <br>
-
-
-          <p>
-
-            Portfolio ini menjadi bagian
-            dari perjalanan tersebut —
-            bukan sekadar tempat menampilkan
-            hasil, tapi tempat untuk menunjukkan
-            proses berkembang.
-
-          </p>
-
-        </div>
-
-
-        <span class="signature">
-
-          Simple. Curious. Consistent.
-
-        </span>
-
-      </div>
-
-
-
-      <div class="card reveal">
-
-        <h3>
-          Quick facts
-        </h3>
-
-
-        <div class="info-grid">
-
-
-          <div class="info-box">
-
-            <strong>
-              Currently
-            </strong>
-
-            <span>
-              Learning & building
-            </span>
-
-          </div>
-
-
-          <div class="info-box">
-
-            <strong>
-              Location
-            </strong>
-
-            <span>
-              Indonesia
-            </span>
-
-          </div>
-
-
-          <div class="info-box">
-
-            <strong>
-              Interest
-            </strong>
-
-            <span>
-              Web & digital
-            </span>
-
-          </div>
-
-
-          <div class="info-box">
-
-            <strong>
-              Mindset
-            </strong>
-
-            <span>
-              Keep improving
-            </span>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================= SKILLS ================= -->
-
-<section id="skills">
-
-  <div class="container">
-
-
-    <div class="section-head reveal">
-
-      <div>
-
-        <div class="section-kicker">
-          02 / Skills
-        </div>
-
-        <h2 class="section-title">
-          Things I enjoy.
-        </h2>
-
-      </div>
-
-
-      <p class="section-description">
-
-        Skill yang sedang dipelajari
-        dan terus dikembangkan.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="skills-grid">
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          H
-        </div>
-
-        <h3>
-          HTML
-        </h3>
-
-        <p>
-          Semantic structure
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          C
-        </div>
-
-        <h3>
-          CSS
-        </h3>
-
-        <p>
-          Layout & visual
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          JS
-        </div>
-
-        <h3>
-          JavaScript
-        </h3>
-
-        <p>
-          Interactive web
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          UI
-        </div>
-
-        <h3>
-          UI Design
-        </h3>
-
-        <p>
-          Clean interfaces
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          F
-        </div>
-
-        <h3>
-          Figma
-        </h3>
-
-        <p>
-          Design exploration
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          R
-        </div>
-
-        <h3>
-          Responsive
-        </h3>
-
-        <p>
-          Mobile friendly
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          G
-        </div>
-
-        <h3>
-          GitHub
-        </h3>
-
-        <p>
-          Version control
-        </p>
-
-      </div>
-
-
-      <div class="skill-card reveal">
-
-        <div class="skill-icon">
-          +
-        </div>
-
-        <h3>
-          Creative Coding
-        </h3>
-
-        <p>
-          Experiment & explore
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects">
-
-  <div class="container">
-
-
-    <div class="section-head reveal">
-
-      <div>
-
-        <div class="section-kicker">
-          03 / Projects
-        </div>
-
-        <h2 class="section-title">
-          Things I've built.
-        </h2>
-
-      </div>
-
-
-      <p class="section-description">
-
-        Beberapa project yang pernah
-        aku bangun dan eksplorasi.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="projects-grid">
-
-
-      <!-- PROJECT RAYYY.MY.ID -->
-
-      <article class="project-card reveal">
-
-
-        <div class="project-preview">
-
-          <div class="preview-content">
-
-            <span class="preview-logo">
-              r, rayy
-            </span>
-
-            <small>
-              ONLINE
-            </small>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="project-content">
-
-
-          <div class="project-top">
-
-            <span class="project-type">
-              WEB APP
-            </span>
-
-            <span>
-              2026
-            </span>
-
-          </div>
-
-
-          <h3>
-            r, rayy online
-          </h3>
-
-
-          <p>
-
-            Website web app dengan tampilan
-            modern dan responsive yang dibuat
-            sebagai project digital dan eksperimen
-            web development.
-
-          </p>
-
-
-          <div class="project-tech">
-
-            <span>
-              HTML
-            </span>
-
-            <span>
-              CSS
-            </span>
-
-            <span>
-              JavaScript
-            </span>
-
-            <span>
-              Responsive
-            </span>
-
-          </div>
-
-
-          <div class="project-links">
-
+          <div class="hero-actions">
 
             <a
-              href="https://rayyy.my.id"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#projects"
+              class="button button-primary"
             >
-              Live Demo ↗
+              Explore projects
+              <span>↓</span>
             </a>
 
+            <a
+              href="#contact"
+              class="button button-secondary"
+            >
+              Let's talk
+              <span>↗</span>
+            </a>
+
+          </div>
+
+          <div class="hero-socials">
 
             <a
               href="https://github.com/RayFlowId"
@@ -2248,846 +129,1055 @@ footer{
               GitHub ↗
             </a>
 
+            <span>•</span>
+
+            <a href="#contact">
+              Contact
+            </a>
 
           </div>
-
 
         </div>
 
-      </article>
+
+        <!-- PROFILE -->
+
+        <div class="profile-area reveal">
+
+          <div class="profile-orbit orbit-one"></div>
+          <div class="profile-orbit orbit-two"></div>
+
+          <div class="profile-card">
+
+            <div class="profile-glow"></div>
+
+            <div class="profile-image">
+
+              <!--
+                PROFILE GLOBAL
+
+                Upload:
+                profile.gif
+
+                Semua pengunjung akan melihat
+                file yang sama.
+              -->
+
+              <img
+                src="profile.gif"
+                alt="Profile Rayy"
+              >
+
+            </div>
+
+            <div class="profile-info">
+
+              <div>
+
+                <h3>
+                  rayy
+                  <span class="verified">✓</span>
+                </h3>
+
+                <p>
+                  Creator · Developer · Learner
+                </p>
+
+              </div>
+
+              <div class="profile-status">
+                <span></span>
+                Online
+              </div>
+
+            </div>
 
 
-      <!--
-        PROJECT BERIKUTNYA
+            <div class="profile-details">
 
-        Nanti kalau punya project baru,
-        tinggal copy <article> project di atas
-        lalu ubah isinya.
-      -->
+              <div>
+                <span>Location</span>
+                <strong>Indonesia</strong>
+              </div>
 
+              <div>
+                <span>Focus</span>
+                <strong>Web & Design</strong>
+              </div>
 
-    </div>
+              <div>
+                <span>Currently</span>
+                <strong>Building</strong>
+              </div>
 
-  </div>
-
-</section>
-
-
-
-<!-- ================= JOURNEY ================= -->
-
-<section id="journey">
-
-  <div class="container">
-
-
-    <div class="section-head reveal">
-
-      <div>
-
-        <div class="section-kicker">
-          04 / Journey
-        </div>
-
-        <h2 class="section-title">
-          Still becoming.
-        </h2>
-
-      </div>
-
-
-      <p class="section-description">
-
-        Perjalanan tidak harus panjang
-        untuk menjadi berarti.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="journey">
-
-
-      <div class="card reveal">
-
-
-        <div class="timeline">
-
-
-          <div class="timeline-item">
-
-            <span>
-              NOW
-            </span>
-
-            <h3>
-              Learning & Building
-            </h3>
-
-            <p>
-
-              Fokus belajar web development,
-              design, dan membuat project kecil.
-
-            </p>
+            </div>
 
           </div>
-
-
-          <div class="timeline-item">
-
-            <span>
-              GROWING
-            </span>
-
-            <h3>
-              Design meets Code
-            </h3>
-
-            <p>
-
-              Belajar menggabungkan visual
-              yang bagus dengan pengalaman
-              pengguna yang nyaman.
-
-            </p>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <span>
-              NEXT
-            </span>
-
-            <h3>
-              Bigger experiments
-            </h3>
-
-            <p>
-
-              Mencoba teknologi baru dan
-              membangun sesuatu yang lebih kompleks.
-
-            </p>
-
-          </div>
-
 
         </div>
 
       </div>
 
+    </section>
 
 
-      <div class="card reveal">
+    <!-- ================= ABOUT ================= -->
 
-        <h3>
-          Currently into
-        </h3>
+    <section class="section" id="about">
 
+      <div class="container">
 
-        <p style="margin-bottom:18px">
-
-          Beberapa hal yang sedang
-          menarik perhatian.
-
-        </p>
-
-
-        <div class="info-grid">
-
-
-          <div class="info-box">
-
-            <strong>
-              Frontend
-            </strong>
-
-            <span>
-              Web interfaces
-            </span>
-
-          </div>
-
-
-          <div class="info-box">
-
-            <strong>
-              UI/UX
-            </strong>
-
-            <span>
-              User experience
-            </span>
-
-          </div>
-
-
-          <div class="info-box">
-
-            <strong>
-              Creative
-            </strong>
-
-            <span>
-              Visual experiments
-            </span>
-
-          </div>
-
-
-          <div class="info-box">
-
-            <strong>
-              Learning
-            </strong>
-
-            <span>
-              New technology
-            </span>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================= SOCIAL ================= -->
-
-<section>
-
-  <div class="container">
-
-
-    <div class="section-head reveal">
-
-      <div>
-
-        <div class="section-kicker">
-          05 / Social
-        </div>
-
-        <h2 class="section-title">
-          Find me online.
-        </h2>
-
-      </div>
-
-
-      <p class="section-description">
-
-        Temukan aku di beberapa platform.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="social-grid">
-
-
-      <a
-        class="social reveal"
-        href="#"
-        onclick="placeholderLink(event)"
-      >
-
-        <div class="social-left">
-
-          <div class="social-icon">
-            IG
-          </div>
+        <div class="section-heading reveal">
 
           <div>
 
-            <strong>
-              Instagram
-            </strong>
-
-            <span>
-              @rayy
+            <span class="section-number">
+              01
             </span>
+
+            <span class="section-label">
+              ABOUT ME
+            </span>
+
+            <h2>
+              A little about me.
+            </h2>
+
+          </div>
+
+          <p>
+            Sedikit cerita tentang siapa aku
+            dan apa yang sedang aku bangun.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <article class="about-main card reveal">
+
+            <span class="card-label">
+              WHO I AM
+            </span>
+
+            <h3>
+              Still learning,
+              <br>
+              still building.
+            </h3>
+
+            <p>
+
+              Aku adalah seseorang yang tertarik
+              dengan dunia digital, terutama
+              web development dan design.
+
+              Aku menikmati proses membuat sesuatu
+              dari nol, mencoba hal baru, menemukan
+              kesalahan, lalu memperbaikinya.
+
+            </p>
+
+            <p>
+
+              Portfolio ini adalah bagian dari
+              perjalanan tersebut. Tidak harus
+              sempurna — yang penting terus
+              berkembang.
+
+            </p>
+
+            <span class="signature">
+              — Rayy
+            </span>
+
+          </article>
+
+
+          <div class="about-side">
+
+            <article class="mini-card reveal">
+
+              <span class="mini-icon">
+                ✦
+              </span>
+
+              <div>
+                <h3>
+                  Curious
+                </h3>
+
+                <p>
+                  Suka mencoba hal yang belum pernah
+                  dibuat sebelumnya.
+                </p>
+              </div>
+
+            </article>
+
+
+            <article class="mini-card reveal">
+
+              <span class="mini-icon">
+                ◇
+              </span>
+
+              <div>
+                <h3>
+                  Creative
+                </h3>
+
+                <p>
+                  Menikmati proses mencari tampilan
+                  yang clean dan nyaman.
+                </p>
+              </div>
+
+            </article>
+
+
+            <article class="mini-card reveal">
+
+              <span class="mini-icon">
+                ↗
+              </span>
+
+              <div>
+                <h3>
+                  Growing
+                </h3>
+
+                <p>
+                  Selalu ada sesuatu yang ingin
+                  dipelajari berikutnya.
+                </p>
+              </div>
+
+            </article>
 
           </div>
 
         </div>
 
-        <span class="arrow">
-          ↗
-        </span>
+      </div>
 
-      </a>
+    </section>
 
 
+    <!-- ================= SKILLS ================= -->
 
-      <a
-        class="social reveal"
-        href="https://github.com/RayFlowId"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <section class="section section-dark" id="skills">
 
-        <div class="social-left">
+      <div class="container">
 
-          <div class="social-icon">
-            GH
-          </div>
+        <div class="section-heading reveal">
 
           <div>
 
-            <strong>
+            <span class="section-number">
+              02
+            </span>
+
+            <span class="section-label">
+              SKILLS
+            </span>
+
+            <h2>
+              Things I enjoy.
+            </h2>
+
+          </div>
+
+          <p>
+            Beberapa teknologi dan bidang
+            yang sedang aku eksplorasi.
+          </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+          <article class="skill-card reveal">
+
+            <div class="skill-icon">
+              &lt;/&gt;
+            </div>
+
+            <h3>
+              HTML
+            </h3>
+
+            <p>
+              Structure & semantic web
+            </p>
+
+            <span class="skill-number">
+              01
+            </span>
+
+          </article>
+
+
+          <article class="skill-card reveal">
+
+            <div class="skill-icon">
+              #
+            </div>
+
+            <h3>
+              CSS
+            </h3>
+
+            <p>
+              Layout, animation & visual
+            </p>
+
+            <span class="skill-number">
+              02
+            </span>
+
+          </article>
+
+
+          <article class="skill-card reveal">
+
+            <div class="skill-icon">
+              JS
+            </div>
+
+            <h3>
+              JavaScript
+            </h3>
+
+            <p>
+              Interaction & functionality
+            </p>
+
+            <span class="skill-number">
+              03
+            </span>
+
+          </article>
+
+
+          <article class="skill-card reveal">
+
+            <div class="skill-icon">
+              UI
+            </div>
+
+            <h3>
+              UI Design
+            </h3>
+
+            <p>
+              Clean & useful interfaces
+            </p>
+
+            <span class="skill-number">
+              04
+            </span>
+
+          </article>
+
+
+          <article class="skill-card reveal">
+
+            <div class="skill-icon">
+              R
+            </div>
+
+            <h3>
+              Responsive
+            </h3>
+
+            <p>
+              Mobile & desktop experience
+            </p>
+
+            <span class="skill-number">
+              05
+            </span>
+
+          </article>
+
+
+          <article class="skill-card reveal">
+
+            <div class="skill-icon">
+              GH
+            </div>
+
+            <h3>
               GitHub
-            </strong>
+            </h3>
 
-            <span>
-              RayFlowId
+            <p>
+              Projects & version control
+            </p>
+
+            <span class="skill-number">
+              06
             </span>
 
-          </div>
+          </article>
 
         </div>
 
-        <span class="arrow">
-          ↗
-        </span>
+      </div>
 
-      </a>
+    </section>
 
 
+    <!-- ================= PROJECTS ================= -->
 
-      <a
-        class="social reveal"
-        href="#"
-        onclick="placeholderLink(event)"
-      >
+    <section class="section" id="projects">
 
-        <div class="social-left">
+      <div class="container">
 
-          <div class="social-icon">
-            DC
-          </div>
+        <div class="section-heading reveal">
 
           <div>
 
-            <strong>
-              Discord
-            </strong>
+            <span class="section-number">
+              03
+            </span>
+
+            <span class="section-label">
+              PROJECTS
+            </span>
+
+            <h2>
+              Things I've built.
+            </h2>
+
+          </div>
+
+          <p>
+            Project yang pernah aku buat,
+            mulai dari eksperimen sampai
+            sesuatu yang benar-benar digunakan.
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- ================= PROJECT 01 ================= -->
+
+          <article class="project-card featured reveal">
+
+            <div class="project-image">
+
+              <div class="project-image-bg"></div>
+
+              <div class="project-window">
+
+                <div class="window-bar">
+
+                  <span></span>
+                  <span></span>
+                  <span></span>
+
+                </div>
+
+                <div class="window-content">
+
+                  <div class="window-logo">
+                    r, rayy
+                  </div>
+
+                  <div class="window-line large"></div>
+                  <div class="window-line"></div>
+                  <div class="window-line short"></div>
+
+                  <div class="window-button">
+                    ONLINE
+                  </div>
+
+                </div>
+
+              </div>
+
+              <span class="project-number">
+                01
+              </span>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-meta">
+
+                <span>
+                  WEB APP
+                </span>
+
+                <span>
+                  2026
+                </span>
+
+              </div>
+
+              <h3>
+                rayyy.my.id
+              </h3>
+
+              <p>
+
+                Personal web project dengan
+                interface modern, responsive,
+                dan dibuat sebagai salah satu
+                eksperimen dalam perjalanan
+                web development.
+
+              </p>
+
+
+              <div class="technology-list">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive</span>
+
+              </div>
+
+
+              <div class="project-actions">
+
+                <a
+                  href="https://rayyy.my.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link primary"
+                >
+                  Visit website
+                  <span>↗</span>
+                </a>
+
+                <a
+                  href="https://github.com/RayFlowId"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  GitHub
+                  <span>↗</span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project-placeholder reveal">
+
+            <div class="placeholder-icon">
+              +
+            </div>
 
             <span>
-              Let's connect
+              NEXT PROJECT
             </span>
+
+            <h3>
+              Something new
+              <br>
+              is coming.
+            </h3>
+
+            <p>
+              Project berikutnya akan muncul
+              di sini.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= JOURNEY ================= -->
+
+    <section class="section section-dark" id="journey">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="section-number">
+              04
+            </span>
+
+            <span class="section-label">
+              JOURNEY
+            </span>
+
+            <h2>
+              Still becoming.
+            </h2>
+
+          </div>
+
+          <p>
+            Tidak harus langsung hebat.
+            Yang penting terus bergerak.
+          </p>
+
+        </div>
+
+
+        <div class="journey-grid">
+
+          <div class="timeline">
+
+            <div class="timeline-line"></div>
+
+
+            <article class="timeline-item reveal">
+
+              <span class="timeline-dot"></span>
+
+              <div>
+
+                <span class="timeline-year">
+                  NOW
+                </span>
+
+                <h3>
+                  Learning & Building
+                </h3>
+
+                <p>
+                  Fokus belajar web development,
+                  design, dan membuat project kecil.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="timeline-item reveal">
+
+              <span class="timeline-dot"></span>
+
+              <div>
+
+                <span class="timeline-year">
+                  GROWING
+                </span>
+
+                <h3>
+                  Design meets Code
+                </h3>
+
+                <p>
+                  Menggabungkan visual yang bagus
+                  dengan pengalaman pengguna
+                  yang nyaman.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="timeline-item reveal">
+
+              <span class="timeline-dot"></span>
+
+              <div>
+
+                <span class="timeline-year">
+                  NEXT
+                </span>
+
+                <h3>
+                  Bigger experiments
+                </h3>
+
+                <p>
+                  Mencoba teknologi baru dan
+                  membuat project yang lebih kompleks.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <div class="journey-card reveal">
+
+            <span class="card-label">
+              CURRENTLY INTO
+            </span>
+
+            <h3>
+              What's on my mind.
+            </h3>
+
+            <div class="interest-list">
+
+              <div>
+                <span>01</span>
+                <strong>Frontend</strong>
+                <small>Web interfaces</small>
+              </div>
+
+              <div>
+                <span>02</span>
+                <strong>UI / UX</strong>
+                <small>User experience</small>
+              </div>
+
+              <div>
+                <span>03</span>
+                <strong>Creative</strong>
+                <small>Visual experiments</small>
+              </div>
+
+              <div>
+                <span>04</span>
+                <strong>Learning</strong>
+                <small>New technology</small>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
-        <span class="arrow">
-          ↗
-        </span>
+      </div>
 
-      </a>
+    </section>
 
 
-    </div>
+    <!-- ================= SOCIAL ================= -->
 
-  </div>
+    <section class="section" id="social">
 
-</section>
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="section-number">
+              05
+            </span>
+
+            <span class="section-label">
+              SOCIAL
+            </span>
+
+            <h2>
+              Find me online.
+            </h2>
+
+          </div>
+
+          <p>
+            Beberapa tempat untuk menemukan
+            project dan aktivitas online-ku.
+          </p>
+
+        </div>
 
 
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-
-  <div class="container">
+        <div class="social-grid">
 
 
-    <div class="contact reveal">
+          <a
+            href="https://github.com/RayFlowId"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card reveal"
+          >
 
+            <div class="social-icon">
+              GH
+            </div>
+
+            <div class="social-info">
+
+              <strong>
+                GitHub
+              </strong>
+
+              <span>
+                @RayFlowId
+              </span>
+
+            </div>
+
+            <span class="social-arrow">
+              ↗
+            </span>
+
+          </a>
+
+
+          <a
+            href="https://rayyy.my.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card reveal"
+          >
+
+            <div class="social-icon">
+              WEB
+            </div>
+
+            <div class="social-info">
+
+              <strong>
+                Website
+              </strong>
+
+              <span>
+                rayyy.my.id
+              </span>
+
+            </div>
+
+            <span class="social-arrow">
+              ↗
+            </span>
+
+          </a>
+
+
+          <a
+            href="#contact"
+            class="social-card reveal"
+          >
+
+            <div class="social-icon">
+              @
+            </div>
+
+            <div class="social-info">
+
+              <strong>
+                Contact
+              </strong>
+
+              <span>
+                Let's connect
+              </span>
+
+            </div>
+
+            <span class="social-arrow">
+              ↗
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact-section" id="contact">
+
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <div class="contact-glow"></div>
+
+          <div class="contact-content">
+
+            <span class="section-label">
+              HAVE AN IDEA?
+            </span>
+
+            <h2>
+              Let's make something
+              <em>interesting.</em>
+            </h2>
+
+            <p>
+              Punya ide, project, atau cuma
+              mau ngobrol? Feel free to reach out.
+            </p>
+
+            <button
+              class="button button-primary"
+              id="contactButton"
+            >
+              Say hello
+              <span>↗</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container footer-content">
 
       <div>
 
-        <h2>
-          Got an idea?
-        </h2>
+        <a href="#home" class="logo">
+          rayy<span>.</span>
+        </a>
 
         <p>
-
-          Kirim pesan atau sekadar say hi.
-          Aku akan senang membaca pesanmu.
-
+          Built with curiosity.
         </p>
 
       </div>
 
+      <div class="footer-right">
 
-      <button
-        onclick="openModal()"
-      >
-        Contact me ↗
-      </button>
+        <span>
+          © 2026 Rayy
+        </span>
 
+        <span>
+          Indonesia
+        </span>
+
+      </div>
 
     </div>
 
-  </div>
-
-</section>
+  </footer>
 
 
-</main>
+  <!-- ================= CONTACT MODAL ================= -->
 
+  <div
+    class="modal"
+    id="contactModal"
+    aria-hidden="true"
+  >
 
+    <div class="modal-backdrop"></div>
 
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-  <div class="container footer-inner">
-
-    <span>
-      © 2026 Rayy. Built with curiosity.
-    </span>
-
-    <span>
-      Personal portfolio · Indonesia
-    </span>
-
-  </div>
-
-</footer>
-
-
-
-<!-- ================= CONTACT MODAL ================= -->
-
-<div
-  class="modal"
-  id="modal"
->
-
-  <div class="modal-box">
-
-
-    <div class="modal-top">
-
-      <h3>
-        Say hello 👋
-      </h3>
+    <div class="modal-box">
 
       <button
-        class="close"
-        onclick="closeModal()"
+        class="modal-close"
+        id="modalClose"
+        aria-label="Tutup"
       >
         ×
       </button>
 
+      <span class="section-label">
+        CONTACT
+      </span>
+
+      <h2>
+        Say hello 👋
+      </h2>
+
+      <p>
+        Isi pesanmu dan aplikasi email
+        akan terbuka.
+      </p>
+
+
+      <form id="contactForm">
+
+        <label>
+          Nama
+
+          <input
+            type="text"
+            id="contactName"
+            placeholder="Nama kamu"
+            required
+          >
+
+        </label>
+
+
+        <label>
+          Email
+
+          <input
+            type="email"
+            id="contactEmail"
+            placeholder="email@example.com"
+            required
+          >
+
+        </label>
+
+
+        <label>
+          Pesan
+
+          <textarea
+            id="contactMessage"
+            placeholder="Tulis pesan..."
+            required
+          ></textarea>
+
+        </label>
+
+
+        <button
+          type="submit"
+          class="button button-primary submit-button"
+        >
+          Open email
+          <span>↗</span>
+        </button>
+
+      </form>
+
     </div>
-
-
-    <form onsubmit="sendMessage(event)">
-
-
-      <div class="field">
-
-        <label>
-          NAME
-        </label>
-
-        <input
-          id="name"
-          type="text"
-          placeholder="Your name"
-          required
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label>
-          EMAIL
-        </label>
-
-        <input
-          id="email"
-          type="email"
-          placeholder="you@example.com"
-          required
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label>
-          MESSAGE
-        </label>
-
-        <textarea
-          id="message"
-          placeholder="Write something..."
-          required
-        ></textarea>
-
-      </div>
-
-
-      <button class="submit">
-        Open email ↗
-      </button>
-
-
-    </form>
 
   </div>
 
-</div>
 
+  <div
+    class="toast"
+    id="toast"
+  ></div>
 
 
-<div
-  class="toast"
-  id="toast"
-></div>
-
-
-
-<script>
-
-
-/* ================= MENU ================= */
-
-const menu =
-  document.getElementById("menu");
-
-const nav =
-  document.getElementById("nav");
-
-
-menu.addEventListener(
-  "click",
-  () => {
-
-    nav.classList.toggle("open");
-
-  }
-);
-
-
-document
-  .querySelectorAll(".nav a")
-  .forEach(link => {
-
-    link.addEventListener(
-      "click",
-      () => {
-
-        nav.classList.remove("open");
-
-      }
-    );
-
-  });
-
-
-
-/* ================= CONTACT ================= */
-
-const modal =
-  document.getElementById("modal");
-
-
-function openModal(){
-
-  modal.style.display = "flex";
-
-}
-
-
-function closeModal(){
-
-  modal.style.display = "none";
-
-}
-
-
-modal.addEventListener(
-  "click",
-  event => {
-
-    if(event.target === modal){
-
-      closeModal();
-
-    }
-
-  }
-);
-
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if(event.key === "Escape"){
-
-      closeModal();
-
-    }
-
-  }
-);
-
-
-
-/* ================= EMAIL ================= */
-
-/*
-  GANTI EMAIL DI SINI
-*/
-
-const MY_EMAIL =
-  "hello@example.com";
-
-
-function sendMessage(event){
-
-  event.preventDefault();
-
-
-  const name =
-    document.getElementById(
-      "name"
-    ).value;
-
-
-  const email =
-    document.getElementById(
-      "email"
-    ).value;
-
-
-  const message =
-    document.getElementById(
-      "message"
-    ).value;
-
-
-  const subject =
-    "Pesan dari portfolio - " +
-    name;
-
-
-  const body =
-`Nama: ${name}
-
-Email: ${email}
-
-Pesan:
-${message}`;
-
-
-  window.location.href =
-    "mailto:" +
-    MY_EMAIL +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
-
-}
-
-
-
-function copyEmail(){
-
-  navigator.clipboard
-    .writeText(MY_EMAIL)
-
-    .then(() => {
-
-      toast(
-        "Email berhasil disalin ✓"
-      );
-
-    })
-
-    .catch(() => {
-
-      toast(MY_EMAIL);
-
-    });
-
-}
-
-
-
-/* ================= TOAST ================= */
-
-const toastElement =
-  document.getElementById(
-    "toast"
-  );
-
-
-let toastTimer;
-
-
-function toast(text){
-
-  toastElement.textContent =
-    text;
-
-
-  toastElement.classList.add(
-    "show"
-  );
-
-
-  clearTimeout(
-    toastTimer
-  );
-
-
-  toastTimer =
-    setTimeout(
-      () => {
-
-        toastElement.classList.remove(
-          "show"
-        );
-
-      },
-      1800
-    );
-
-}
-
-
-
-/* ================= PLACEHOLDER ================= */
-
-function placeholderLink(event){
-
-  event.preventDefault();
-
-  toast(
-    "Link akun ini belum diatur ✦"
-  );
-
-}
-
-
-
-/* ================= SCROLL REVEAL ================= */
-
-const revealElements =
-  document.querySelectorAll(
-    ".reveal"
-  );
-
-
-const observer =
-  new IntersectionObserver(
-
-    entries => {
-
-      entries.forEach(
-        entry => {
-
-          if(entry.isIntersecting){
-
-            entry.target.classList.add(
-              "visible"
-            );
-
-            observer.unobserve(
-              entry.target
-            );
-
-          }
-
-        }
-      );
-
-    },
-
-    {
-      threshold:.12
-    }
-
-  );
-
-
-revealElements.forEach(
-  element => {
-
-    observer.observe(element);
-
-  }
-);
-
-
-
-/* ================= SMOOTH NAV ================= */
-
-document
-  .querySelectorAll(
-    'a[href^="#"]'
-  )
-  .forEach(anchor => {
-
-    anchor.addEventListener(
-      "click",
-      function(event){
-
-        const target =
-          document.querySelector(
-            this.getAttribute(
-              "href"
-            )
-          );
-
-
-        if(!target){
-          return;
-        }
-
-
-        event.preventDefault();
-
-
-        target.scrollIntoView({
-          behavior:"smooth"
-        });
-
-      }
-    );
-
-  });
-
-
-</script>
-
+  <script src="script.js"></script>
 
 </body>
-  </html>
+</html>
