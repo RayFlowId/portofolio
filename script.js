@@ -272,7 +272,7 @@ document.addEventListener(
 */
 
 const MY_EMAIL =
-  "hello@example.com";
+  "rayhosting12@gmail.com";
 
 
 const contactForm =
