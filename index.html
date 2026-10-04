@@ -515,6 +515,111 @@ section{
 
 /* ================= PROJECTS ================= */
 
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.project-card{
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--surface);
+  border-radius:18px;
+  transition:.25s;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  border-color:#383d49;
+}
+
+.project-preview{
+  height:190px;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 50% 20%,
+      rgba(139,108,255,.22),
+      transparent 45%),
+    #0a0c10;
+  border-bottom:1px solid var(--border);
+}
+
+.project-preview span{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:-.04em;
+  color:#b8afff;
+}
+
+.project-content{
+  padding:20px;
+}
+
+.project-top{
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted2);
+  font-size:9px;
+}
+
+.project-type{
+  color:var(--accent);
+  font-weight:800;
+}
+
+.project-card h3{
+  font-size:20px;
+  margin-top:12px;
+}
+
+.project-card p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.7;
+  margin-top:6px;
+}
+
+.project-tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:15px;
+}
+
+.project-tech span{
+  padding:5px 8px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:#858b96;
+  font-size:9px;
+}
+
+.project-links{
+  display:flex;
+  gap:8px;
+  margin-top:18px;
+}
+
+.project-links a{
+  padding:8px 11px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  font-size:10px;
+  color:#d8dbe1;
+}
+
+.project-links a:hover{
+  background:#171a21;
+}
+
+@media(max-width:650px){
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 .project-empty{
   min-height:300px;
   display:flex;
@@ -1328,15 +1433,49 @@ footer{
     </div>
 
 
-    <div class="project-empty reveal">
+  <div class="projects-grid">
 
-      <div class="empty-icon">
-        ✦
+  <article class="project-card reveal">
+
+    <div class="project-preview">
+      <span>RAYTUBE</span>
+    </div>
+
+    <div class="project-content">
+
+      <div class="project-top">
+        <span class="project-type">WEB APP</span>
+        <span class="project-year">2026</span>
       </div>
 
-      <h3>
-        Projects are cooking.
-      </h3>
+      <h3>RayTube</h3>
+
+      <p>
+        Platform video sederhana dengan tampilan modern
+        yang dibuat untuk eksperimen dan pembelajaran web.
+      </p>
+
+      <div class="project-tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="project-links">
+        <a href="LINK-DEMO" target="_blank">
+          Live Demo ↗
+        </a>
+
+        <a href="https://rayyy.my.id" target="_blank">
+          GitHub ↗
+        </a>
+      </div>
+
+    </div>
+
+  </article>
+
+</div>
 
       <p>
         Saat ini aku masih membangun dan bereksperimen.
